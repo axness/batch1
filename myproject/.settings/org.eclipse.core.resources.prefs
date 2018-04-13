@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+encoding//todo/apps.py=utf-8
+encoding//todo/migrations/0001_initial.py=utf-8
+encoding//todo/migrations/0002_auto_20180411_0855.py=utf-8
+encoding//todo/models.py=utf-8
 encoding//todo/views.py=utf-8
