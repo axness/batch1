@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from todo.views import index, first,python
+from todo.views import index, first,python, detail
 
 urlpatterns = [
     url(r'^$', index),
     url(r'^first/$', first),
-    url(r'^python/$',python)
+    url(r'^python/$',python),
+    url(r'^(?P<task_id>[0-9])/$', detail, name="detail")
 ]

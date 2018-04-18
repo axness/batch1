@@ -5,14 +5,11 @@
 </head>
 <body>
 <p>this is a index page</p>
-<!--  {% load datetime %}-->
-import datetime
 <table border=1>
 {% for x in obj %}
 <tr>
 
-<td>{{ x.task_names }}</td>
-<td> {{ x.published_date }}</td>
+<td><a href="url detail {{x.id}}">{{ x.task_names }}</a></td>
 </tr>
 {% endfor %}
 
