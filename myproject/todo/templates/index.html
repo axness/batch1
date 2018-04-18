@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+<p>this is a index page</p>
+<!--  {% load datetime %}-->
+import datetime
+<table border=1>
+{% for x in obj %}
+<tr>
+
+<td>{{ x.task_names }}</td>
+<td> {{ x.published_date }}</td>
+</tr>
+{% endfor %}
+
+</table> 
+</body>
+</html>
