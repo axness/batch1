@@ -1,18 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html>
 <head>
-<title>Insert title here</title>
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href= "{% static 'mystyle.css' %}" /> 
 </head>
 <body>
-<p>this is a index page</p>
-<table border=1>
-{% for x in obj %}
-<tr>
+	<p>this is a index page</p>
+	<table border=1>
+	{% for x in obj %}
+		<tr>
 
-<td><a href="url detail {{x.id}}">{{ x.task_names }}</a></td>
-</tr>
-{% endfor %}
+			<td><a href="{{x.id}}/">{{ x.task_names }}</a></td>
+		</tr>
+	{% endfor %}
 
-</table> 
+	</table> 
 </body>
 </html>

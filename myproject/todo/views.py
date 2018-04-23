@@ -4,6 +4,11 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponse
 from todo.models import Task
+from django.views.generic import ListView, DetailView
+from todo.forms import AuthorForm
+from django.http.response import HttpResponseRedirect
+
+
 def python(request):
     return HttpResponse("python")
 # Create your views here.
@@ -18,3 +23,19 @@ def first(request):
 def detail(request, **kwargs):
     db_obj = Task.objects.get(id=kwargs['task_id'])
     return render(request, "detail.html", {'obj': db_obj})
+
+def add_book(request):
+    #import pdb; pdb.set_trace()
+    form = AuthorForm(request.GET)
+    if form.is_valid():
+        return HttpResponseRedirect('/thanks/')
+    form = AuthorForm()
+    return render(request, 'add_author.html', {'form': form})
+
+def add_author(request):
+    #import pdb; pdb.set_trace()
+    form =  AuthorForm(request.GET)
+    if form.is_valid():
+        return HttpResponseRedirect('/thanks/')
+    form = AuthorForm()
+    return render(request, 'add_author.html', {'form1': form})
