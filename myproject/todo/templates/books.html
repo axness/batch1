@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border=1>
+{% for obj in object_list %}
+<tr>
+<td>{{ obj.title }} </td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

@@ -4,7 +4,8 @@ from todo.models import Book, Author, Publisher
 class AuthorForm(forms.Form):
     first_name = forms.CharField(max_length=100)
     last_name = forms.CharField(max_length=50)
-    email = forms.EmailField(required=False)
+    email = forms.EmailField()
+    
     
 class BookForm(forms.Form):
     title = forms.CharField(max_length=50)

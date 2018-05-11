@@ -14,13 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from todo.views import index, first,python, detail, add_book, add_author
+from django.views.generic import ListView
+from todo.views import index, first,python, detail, add_book, add_author, BookList, AddAuthor,AuthorDetail
 app_name = "todo"
 urlpatterns = [
     url(r'^$', index),
     url(r'^first/$', first),
     url(r'^python/$',python),
-    url(r'^(?P<task_id>[0-9])/$', detail, name="detail"),
-    url(r'book', add_book),
-    url(r'author/$', add_author)
+    url(r'^(?P<pk>[0-9])/$', AuthorDetail.as_view(), name="detail"),
+    url(r'^book/$', add_book),
+    url(r'book1', BookList.as_view()),
+    url(r'^author/$', add_author),
+    url(r'detail/', AuthorDetail.as_view()),
+    url(r'^author11/$', AddAuthor.as_view()),
+    #url(r'^login/$', login)
+    
 ]
